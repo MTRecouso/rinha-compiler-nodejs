@@ -96,6 +96,7 @@ const optimizeRecursions = (term, scope = null) => {
   }
   if (term.kind === 'Call') {
     if (
+      scope !== null &&
       functionCalls[term.callee.text] &&
       functionCalls[term.callee.text].isPure === false
     ) {
